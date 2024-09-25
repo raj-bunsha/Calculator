@@ -1,16 +1,24 @@
 ---
-- name: Pull Docker Image of Calculator
+- name: Pull and Run Docker Container of Calculator
   hosts: all
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
-    - name: Pull image
-      docker_image:
-        name: rajb957/calculator:latest
-        source: pull
-    - name: Start docker service
+    - name: Start Docker service
       service:
         name: docker
         state: started
-    - name: Running container
-      shell: docker run -it -d --name Calculator rajb957/calculator
+      become: yes  # If sudo permissions are required
+
+    - name: Pull Docker image
+      docker_image:
+        name: rajb957/calculator:latest
+        source: pull
+
+    - name: Run Calculator container
+      docker_container:
+        name: Calculator
+        image: rajb957/calculator:latest
+        state: started
+        detach: true
+        tty: true
