@@ -1,9 +1,12 @@
 package org.example;
 
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
 
+//    private static final Logger logger = LogManager.getLogger(Main.class);
     // Method to calculate factorial
     public static long factorial(int n) {
         if (n == 0 || n == 1) {
