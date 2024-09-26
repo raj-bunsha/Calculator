@@ -18,7 +18,15 @@ public class Main {
         }
         return fact;
     }
-
+    public static double squareRoot(double num) {
+        return Math.sqrt(num);
+    }
+    public static double naturalLogarithm(double num) {
+        return Math.log(num);
+    }
+    public static double power(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
     // Main program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +47,7 @@ public class Main {
                     System.out.print("Enter a number: ");
                     double num = scanner.nextDouble();
                     if (num >= 0) {
-                        System.out.println("Square root of " + num + " is: " + Math.sqrt(num));
+                        System.out.println("Square root of " + num + " is: " + squareRoot(num));
                     } else {
                         System.out.println("Square root of negative number is not defined.");
                     }
@@ -59,7 +67,7 @@ public class Main {
                     System.out.print("Enter a number: ");
                     double x = scanner.nextDouble();
                     if (x > 0) {
-                        System.out.println("Natural logarithm of " + x + " is: " + Math.log(x));
+                        System.out.println("Natural logarithm of " + x + " is: " + naturalLogarithm(x));
                     } else {
                         System.out.println("Natural logarithm is not defined for non-positive numbers.");
                     }
@@ -70,7 +78,7 @@ public class Main {
                     double base = scanner.nextDouble();
                     System.out.print("Enter the exponent (y): ");
                     double exponent = scanner.nextDouble();
-                    System.out.println(base + " raised to the power " + exponent + " is: " + Math.pow(base, exponent));
+                    System.out.println(base + " raised to the power " + exponent + " is: " + power(base, exponent));
                     break;
 
                 case 5: // Exit
