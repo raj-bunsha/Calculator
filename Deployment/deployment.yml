@@ -12,5 +12,8 @@
       service:
         name: docker
         state: started
+    - name: Delete container if already running
+      shell: docker rm -f Calculator
+      ignore_errors: yes
     - name: Running container
       shell: docker run -it -d --name Calculator rajb957/calculator
