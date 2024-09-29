@@ -4,7 +4,7 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//new modification
+//new modification2
 public class Main {
 
 //    private static final Logger logger = LogManager.getLogger(Main.class);
